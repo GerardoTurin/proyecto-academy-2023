@@ -18,42 +18,17 @@
 <body>
     <header>
         <div class="contenido">
-            <div class="logo">
-                <img src="img/gt-logo.jpg" alt="logo">
-            </div>
+
             <nav class="menu">
                 <ul class="links">
-                    <li><a href="#inicio" class="active">Inicio</a></li>
-                    <li><a href="#sobremi">Sobre mi</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#portafolio">Portafolio</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a class="link" href="#sobremi" class="active">Perfil</a></li>
+                    <li><a class="link" href="#skills">Skills</a></li>
+                    <li><a class="link" href="#experiencia">Experincia</a></li>
                 </ul>
             </nav>
-            
-            <!-- Hamburguer -->
-            <div class="icono-nav">
-                <i class="fa-solid fa-bars"></i>
-            </div>
 
-            <!-- redes Sociales -->
-            <div class="socials">
-                <a href="https://www.facebook.com/gera.turin.9" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/geraturin" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/gerardo-turin-767198172" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/GerardoTurin" target="_blank"><i class="fa-brands fa-github"></i></a>
-            </div>
         </div>
     </header>
-
-    <!-- Seccion Inicio -->
-    <section id="inicio">
-        <div class="presentacion">
-            <p class="bienvenida">Bienvenidos</p>
-            <h1>Soy <span>Gerardo Turin</span>, Desarrollador Web Full Stack</h1>
-            <a href="#portafolio">Ir al Portafolio</a>
-        </div>
-    </section>
 
     <!-- Seccion Sobre Mi -->
     <section id="sobremi">
@@ -61,161 +36,149 @@
             <img src="img/Mi proyecto.png" alt="Mí foto">
         </div>
         <div class="sobremi">
-            <h3 class="titulo-seccion">Sobre Mí</h3>
-            <p class="descripcion">Estudiante de programacion autodidacta, orientado en desarrollo web con 2 años de experiencia en HTML, CSS, JavaScript, Node.js, React y Git. Busco oportunidades para aplicar mis habilidades y continuar aprendiendo en un ambiente de trabajo colaborativo.</p>
-            <a href="assets/CV-Gerardo-Turin-2023.pdf" download="CV-Gerardo-Turin-2023.pdf" target="_blank" id="download-cv">Descargar CV</a>
+            <!-- <h3 class="titulo-seccion">Sobre Mí</h3> -->
+            <h1>Gerardo Turin</h1>
+            <hr>
+            <h4>Desarrollador Web Full Stack</h4>
+            <p class="descripcion">
+                Soy un desarrollador web autodidacta apasionado por crear experiencias digitales únicas y atractivas. He estado dedicando los últimos 2 años a perfeccionar mis habilidades en HTML, CSS, JavaScript, Node.js, React, Git y otras tecnologías relacionadas. 
+            </p>
+
+            <!-- Button Ves mas -->
+            <button class="btn-verMas">Ver más</button>
+
+            <div class="parrafoOcultar">
+                <p class="descripcion">
+                    Gracias a mi experiencia, he aprendido a diseñar y desarrollar sitios web de alta calidad y aplicaciones web dinámicas que satisfacen las necesidades y expectativas de los usuarios.
+                </p>
+    
+                <p class="descripcion">
+                    Me considero un aprendiz constante, siempre en busca de oportunidades para mejorar mis habilidades y conocimientos en un ambiente de trabajo colaborativo.
+                </p>
+            </div>
+
+
+            <button class="btn-mostrarDatos">Mostrar Datos</button>
+
+            <div class="info-personal">
+                <ul>
+                    <!-- mostrar cada li con un icono -->
+                    <li><i class="fa-solid fa-location-dot"></i> - Ciudad de México</li>
+                    <li><i class="fa-solid fa-street-view"></i> - Calle 123, Colonia 123, Ciudad de México</li>
+                    <li><i class="fa-solid fa-cake-candles"></i> - 01 / 01 / 1990</li>
+                    <li><i class="fa-solid fa-phone"></i> - 55 1234 5678</li>
+                    <li><i class="fa-solid fa-envelope"></i> - judd.gera@example.com</li>
+                </ul>
+            </div>
+
+
         </div>
     </section>
 
     <!-- Seccion Skills -->
     <section id="skills" class="contenedor-skills">
         <h3 class="titulo-seccion">Skills</h3>
-        <div class="skill">
-            <div class="info-skill">
-                <p><span class="lista"></span>Html & Css</p>
-                <span class="porcentaje">90%</span>
-            </div>
-            <div class="barra">
-                <div id="html" class="barra-progreso1"></div>
-            </div>
-        </div>
 
-        <div class="skill">
-            <div class="info-skill">
-                <p><span class="lista"></span>Sass</p>
-                <span class="porcentaje">80%</span>
-            </div>
-            <div class="barra">
-                <div id="sass" class="barra-progreso2"></div>
-            </div>
-        </div>
-        
-        <div class="skill">
-            <div class="info-skill">
-                <p><span class="lista"></span>Bootstrap</p>
-                <span class="porcentaje">80%</span>
-            </div>
-            <div class="barra">
-                <div id="bootstrap" class="barra-progreso3"></div>
-            </div>
-        </div>
+        <div class="lista-skills">
+            <ul>
+                <li>
+                    <i class="fa-brands fa-html5"></i> HTML
+                </li>
+                <li>
+                    <i class="fa-brands fa-css3-alt"></i> CSS
+                </li>
+                <li>
+                    <i class="fa-brands fa-sass"></i> SASS
+                </li>
+                <li>
+                    <i class="fa-brands fa-bootstrap"></i> Bootstrap
+                </li>
+                <li>
+                    <i class="fa-brands fa-js"></i> JavaScript
+                </li>
+                <li>
+                    <i class="fa-brands fa-node"></i> NodeJS
+                </li>
+                <li>
+                    <i class="fa-brands fa-react"></i> React
+                </li>
+                <li>
+                    <i class="fa-solid fa-database"></i> MongoDB
+                </li>
+                <li>
+                    <i class="fa-solid fa-database"></i> MySQL
+                </li>
+            </ul>
 
-        <div class="skill">
-            <div class="info-skill">
-                <p><span class="lista"></span>JavasCript</p>
-                <span class="porcentaje">85%</span>
-            </div>
-            <div class="barra">
-                <div id="javascript" class="barra-progreso4"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="info-skill">
-                <p><span class="lista"></span>NodeJS</p>
-                <span class="porcentaje">75%</span>
-            </div>
-            <div class="barra">
-                <div id="nodejs" class="barra-progreso5"></div>
-            </div>
-        </div>
-        
-        <div class="skill">
-            <div class="info-skill">
-                <p><span class="lista"></span>React</p>
-                <span class="porcentaje">80%</span>
-            </div>
-            <div class="barra">
-                <div id="react" class="barra-progreso6"></div>
-            </div>
-        </div>
-        
-        <div class="skill">
-            <div class="info-skill">
-                <p><span class="lista"></span>MongoDB</p>
-                <span class="porcentaje">85%</span>
-            </div>
-            <div class="barra">
-                <div id="mongo" class="barra-progreso7"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="info-skill">
-                <p><span class="lista"></span>MySQL</p>
-                <span class="porcentaje">70%</span>
-            </div>
-            <div class="barra">
-                <div id="mysql" class="barra-progreso8"></div>
-            </div>
-        </div>
     </section>
 
-    <!-- Seccion Portafolio -->
-    <section id="portafolio">
-        <h3 class="titulo-seccion">Mis Proyectos</h3>
-        <div class="contenedor-portafolio">
+    <!-- Seccion Experiencia -->
+    <section id="experiencia">
+        <h3 class="titulo-seccion">Experiencia</h3>
 
-            <div class="portafolio">
-                <div class="overlay"></div>
-                <a href="https://apv-admin-pacientes-veterinaria2022.netlify.app" target="_blank" rel="noopener noreferrer">
-                    <img src="img/capAPV.png" alt="Adm de pacientes de veterinaria">
-                </a>
-                <div class="info-proyecto">
-                    <h4>APV - Administrador de Pacientes de Veterinaria</h4>
-                    <p>Proyecto realizado con el stack MERN, donde primero debemos registrarnos para posteriormente ingresar y poder crear nuestras citas.</p>
-                    <p>MongoDB | Express | React | NodeJS</p>
-                </div>
-            </div>
+        <!-- crea una lista desordenada con una lista oredenada dentro -->
 
-            <div class="portafolio">
-                <div class="overlay"></div>
-                <a href="https://buscador-recetas2022.netlify.app" target="_blank" rel="noopener noreferrer">
-                    <img src="img/caprecetas.png" alt="buscardor de recetas de cocina">
-                </a>
-                <div class="info-proyecto">
-                    <h4>Buscador de Recetas de Cocina</h4>
-                    <p>Proyecto donde consumimos informacion de una API para traer y seleccionar nuestras recetas preferidas.</p>
-                    <p>Html | Css | Bootstrap | JavasCript</p>
-                </div>
-            </div>
+        <ul class="lista-experiencia">
+            <li>
+                <p class="descripcion">
+                    Desarrollo de Proyectos Personales: A lo largo de mi trayectoria como desarrollador web autodidacta, he tenido la oportunidad de trabajar en varios proyectos personales que me han permitido aplicar y mejorar mis habilidades. Entre ellos se incluyen:
+                </p>
 
-            <div class="portafolio">
-                <div class="overlay"></div>
-                <a href="https://appchat2022.up.railway.app" target="_blank" rel="noopener noreferrer">
-                    <img src="img/CAPappchat.png" alt="aplicacion de chat en tiempo real">
-                </a>
-                <div class="info-proyecto">
-                    <h4>Aplicacion de Chat</h4>
-                    <p>Proyecto donde creamos una App de chats en tiempo real.</p>
-                    <p>Html | Bootstrap | JavasCript | NodeJS</p>
-                </div>
-            </div>
-        </div>
+                <ol class="subListaOL">
+                    <li>
+                        <div class="proyecto">
+                            <a href="https://apv-admin-pacientes-veterinaria2022.netlify.app" target="_blank" rel="noopener noreferrer">
+                                <h4>APV - Administrador de Pacientes de Veterinaria</h4>
+                            </a>
+
+                            <button class="btn-descProyect">Ver Descripción</button>
+
+                            <div class="info-oculta">
+                                <p>Proyecto realizado con el stack MERN, donde primero debemos registrarnos para posteriormente ingresar y poder crear nuestras citas.</p>
+                                <p>MongoDB | Express | React | NodeJS</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="proyecto">
+                            <a href="https://buscador-recetas2022.netlify.app" target="_blank" rel="noopener noreferrer">
+                                <h4>Buscador de Recetas de Cocina</h4>
+                            </a>
+                            
+                            <button class="btn-descProyect">Ver Descripción</button>
+
+                            <div class="info-oculta">
+                                <p>Proyecto donde consumimos informacion de una API para traer y seleccionar nuestras recetas preferidas.</p>
+                                <p>Html | Css | Bootstrap | JavasCript</p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="proyecto">
+                            <a href="https://appchat2022.up.railway.app" target="_blank" rel="noopener noreferrer">
+                                <h4>Aplicacion de Chat</h4>
+                            </a>
+
+                            <button class="btn-descProyect">Ver Descripcion</button>
+
+                            <div class="info-oculta">
+                                <p>Proyecto donde creamos una App de chats en tiempo real.</p>
+                                <p>Html | Bootstrap | JavasCript | NodeJS</p>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </li>
+            
+        </ul>
+        
     </section>
 
-    <!-- Seccion Contacto -->
-    <section id="contacto">
-        <h3 class="titulo-seccion">Contacto</h3>
-        <div class="contenedor-form">
-            <form action="">
-                <div class="fila mitad">
-                    <input type="text" class="input-mitad" placeholder="Tu Nombre">
-                    <input type="text" class="input-mitad" placeholder="Tu Apellido">
-                </div>
-                <div class="fila">
-                    <input type="email" class="input-full" placeholder="Tu Email">
-                </div>
-                <div class="fila">
-                    <textarea name="mensaje" id="" cols="30" rows="10" class="input-full" placeholder="Deja tu mensaje..."></textarea>
-                </div>
-                <input type="submit" value="Enviar Mensaje" class="btn-enviar">
-            </form>
-        </div>
-    </section>
 
     <!-- Seccion Footer -->
     <footer>
-        <p>Todos los derechos reservador - 2023</p>
         <!-- redes Sociales -->
         <div class="socials">
             <a href="https://www.facebook.com/gera.turin.9" target="_blank"><i class="fa-brands fa-facebook"></i></a>

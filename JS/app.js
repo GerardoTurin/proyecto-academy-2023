@@ -1,160 +1,123 @@
 
+//! Volver hacia "Perfil" al recargar la pagina y quitar el scroll suave.
 
-//! Volver al inicio de la pagina al recargar.
-window.onbeforeunload = function () {
+window.addEventListener('load', () => {
     window.scrollTo(0, 0);
-};
-
-
-
-
-//! Menu responsive
-
-const menu = document.querySelector('.icono-nav');
-const nav = document.querySelector('nav');
-
-menu.addEventListener('click', function () {
-    nav.classList.toggle('responsive');
 });
 
 
 
 
+//! Clase active al menu por defecto.
+
+const menu = document.querySelector('.menu');
+const menuItems = document.querySelectorAll('.link');
 
 
-//! Ocultar menu al hacer click en un link
+const activeDefault = (menu, links) => {
+    window.addEventListener('load', () => {
+        links[0].classList.add('active');
 
-const selecionarLink = () => {
-    const links = document.querySelectorAll('.links a');
+    });
+};
 
-    // Agregar el evento de clic a cada enlace
-    for (let i = 0; i < links.length; i++) {
-        links[i].addEventListener("click", function () {
-            // Quitar la clase "active" de todos los enlaces
-            for (let j = 0; j < links.length; j++) {
-                links[j].classList.remove("active");
+activeDefault(menu, menuItems);
+
+
+
+
+
+
+
+//! Agregar y quitar clase active al menu.
+
+const agregarClaseActive = (menu, links) => {
+    menu.addEventListener('click', (e) => {
+        const link = e.target;
+
+        if (link.classList.contains('link')) {
+            links.forEach((link) => {
+                link.classList.remove('active');
+            });
+
+            link.classList.add('active');
+        }
+    });
+};
+
+agregarClaseActive(menu, menuItems);
+
+
+
+
+
+
+//! Mostar y ocultar contenido con un boton.
+
+const btnVerMas = document.querySelector('.btn-verMas');
+const parrafos = document.querySelector('.parrafoOcultar');
+
+
+const btnMostrarDatos = document.querySelector('.btn-mostrarDatos');
+const infoPersonal = document.querySelector('.info-personal');
+
+
+const mostrarContenido = (btn1, btn2, contenido1, contenido2) => {
+    btn1.addEventListener('click', () => {
+        contenido1.classList.toggle('mostrar');
+
+        if (btn1.textContent === 'Ver más') {
+            btn1.textContent = 'Ver menos';
+        } else {
+            btn1.textContent = 'Ver más';
+        }
+    });
+
+    btn2.addEventListener('click', () => {
+        contenido2.classList.toggle('mostrar');
+
+        if (btn2.textContent === 'Mostrar Datos') {
+            btn2.textContent = 'Ocultar Datos';
+        } else {
+            btn2.textContent = 'Mostrar Datos';
+        }
+    });
+};
+
+mostrarContenido(btnVerMas, btnMostrarDatos, parrafos, infoPersonal);
+
+
+
+
+
+//! Mostrar y ocultar Descripccion de los proyectos.
+
+const btnVerMasProyectos = document.querySelectorAll('.btn-descProyect');
+const decripcionProyectos = document.querySelectorAll('.info-oculta');
+
+
+const mostrarDescripcion = (btn, descripcion) => {
+    btn.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            const estaMostrando = btn.classList.contains('mostrando');
+
+            descripcion[i].classList.toggle('info-proyecto');
+            btn.classList.toggle('mostrando', !estaMostrando);
+
+            if (estaMostrando) {
+                btn.textContent = 'Ver Descripción';
+            } else {
+                btn.textContent = 'Ocultar Descripción';
             }
-            // Agregar la clase "active" al enlace seleccionado
-            this.classList.add("active");
-        });
-
-
-        links.forEach((link) => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('responsive');
-            });
-        });
-
-
-    };
-};
-selecionarLink();
-
-
-
-
-
-//! Scroll suave
-
-const scrollSuave = () => {
-    const links = document.querySelectorAll('.links a');
-    const portfolioLink = document.querySelector('#inicio a');
-    links.forEach((link) => {
-        link.addEventListener('click', (evt) => {
-            evt.preventDefault();
-            const seccion = document.querySelector(evt.target.attributes.href.value);
-            seccion.scrollIntoView({
-                behavior: 'smooth',
-            });
-        });
-    });
-
-    portfolioLink.addEventListener('click', (evt) => {
-        evt.preventDefault();
-        const seccion = document.querySelector(evt.target.attributes.href.value);
-        seccion.scrollIntoView({
-            behavior: 'smooth',
         });
     });
 };
-scrollSuave();
+
+mostrarDescripcion(btnVerMasProyectos, decripcionProyectos);
 
 
 
 
-//! Enviar formulario
-
-const form = document.querySelector("form");
-const submitBtn = document.querySelector(".btn-enviar");
-
-form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    form.reset(); // Resetea el formulario
-    const alert = document.createElement("div");
-    alert.classList.add("alert");
-    alert.textContent = "Mensaje enviado!";
-    submitBtn.style.display = "none"; // Oculta el botón de enviar
-    form.appendChild(alert);
-    
-    setTimeout(() => {
-        alert.remove();
-        submitBtn.style.display = "block";
-    }, 2000);
-});
-
-
-
-
-
-
-//! reset progress - scroll
-
-
-const skills = document.querySelector('#skills');
-const elementIds = ['html', 'sass', 'bootstrap', 'javascript', 'nodejs', 'react', 'mongo', 'mysql'];
-
-const toggleClasses = (add) => {
-    elementIds.forEach((id, index) => {
-        document.querySelector(`#${id}`).classList[add ? 'add' : 'remove'](`barra-progreso${index + 1}`);
-    });
-};
-
-const detectarScroll = () => {
-    const distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    toggleClasses(distancia_skills <= 200);
-};
-
-const detectarScroll2 = () => {
-    const distancia_skills = window.innerHeight + skills.getBoundingClientRect().top;
-    toggleClasses(distancia_skills >= 200);
-};
-
-window.addEventListener('scroll', () => {
-    const previusScroll = 0;
-    const skillPosition = skills.getBoundingClientRect().top;
-
-    if (skillPosition > previusScroll) {
-        detectarScroll();
-    } else {
-        detectarScroll2();
-    }
-
-});
-
-
-
-
-//! Descargar CV
-
-const downloadBtn = document.querySelector('#download-cv');
-
-
-const downloadCV = () => {
-    const link = document.createElement('a');
-    link.click();
-};
-downloadBtn.addEventListener('click', downloadCV);
 
 
 
